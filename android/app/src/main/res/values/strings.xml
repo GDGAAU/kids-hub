@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">kidsHub</string>
-    <string name="title_activity_main">kidsHub</string>
-    <string name="package_name">com.messibre.kidsHub</string>
-    <string name="custom_url_scheme">com.messibre.kidsHub</string>
-</resources>
