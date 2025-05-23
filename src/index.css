@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #6366f1;
+  --text-color: #111827;
+  --bg-color: rgb(43, 129, 226);
+  --border-radius: 0.5rem;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("./assets/pic5.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+*/ .home {
+  text-align: "center";
+  padding: "2rem";
+  background-image: url("./assets/pic2.jpg");
+  background-size: cover;
+  min-height: "80vh";
+  border-radius: auto;
+  margin: "1rem";
+  box-shadow: "0 10px 20px rgba(0,0,0,0.2)";
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+button {
+  background-color: #003399;
+  border: none;
+
+  .nav-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .navigation-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.painting-app {
+  background-image: url("../assets/piano.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 3px dotted #00acc1;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 172, 193, 0.2);
+}
+
+.painting-app canvas {
+  display: block;
+  margin: 1rem auto;
+  border: 3px solid #26c6da;
+  border-radius: 1rem;
+  background-color: white;
+}
+.painting-app h2 {
+  text-align: center;
+}
+
+.painting-tools {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.painting-tools button {
+  background-color: #00ccff;
+  color: #004d40;
+  border: none;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.painting-tools button:hover {
+  background-color: #3333ff;
+}
+.instrument-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+select,
+label,
+button {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .instrument-container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  select,
+  label,
+  button {
+    font-size: 1rem;
+    margin: 5px;
+  }
+
+  .controls button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instrument-container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select,
+  label,
+  button {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+
+  .controls button {
+    padding: 6px 12px;
+  }
+
+  .react-piano {
+    width: 100% !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .react-piano {
+    width: 80% !important;
+    height: 200px !important;
+  }
+}
