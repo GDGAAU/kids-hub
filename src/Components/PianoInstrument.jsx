@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Piano, KeyboardShortcuts } from "react-piano";
+import { MidiNumbers } from "react-piano";
 import Soundfont from "soundfont-player";
 import "react-piano/dist/styles.css";
 import { GiGrandPiano } from "react-icons/gi";
@@ -23,12 +24,12 @@ export default function PianoInstrument() {
   const instrumentOptions = [
     { value: "acoustic_grand_piano", label: "Grand Piano" },
     { value: "electric_piano_1", label: "Electric Piano" },
-    { value: "harpsichord", label: "Harpsichord" },
+    { value: "harpsichord", label: "Harpsich]ord" },
     { value: "celesta", label: "Celesta" },
   ];
 
   const initAudio = async () => {
-    if (instrument) return; // already loaded
+    if (instrument) return;
     try {
       const context = new (window.AudioContext || window.webkitAudioContext)();
       const inst = await Soundfont.instrument(context, selectedInstrument);
@@ -51,7 +52,6 @@ export default function PianoInstrument() {
       let ctx = audioContext;
       let inst = instrument;
 
-      // If not initialized, create and load instrument
       if (!ctx) {
         ctx = new (window.AudioContext || window.webkitAudioContext)();
         inst = await Soundfont.instrument(ctx, selectedInstrument);
@@ -59,7 +59,6 @@ export default function PianoInstrument() {
         setInstrument(inst);
       }
 
-      // Resume context if suspended (for mobile)
       if (ctx.state === "suspended") {
         await ctx.resume();
       }
@@ -114,6 +113,37 @@ export default function PianoInstrument() {
     top: "50px",
     left: "10px",
     textDecoration: "none",
+  };
+  const keysBoxStyle = {
+    background: "linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%)",
+    borderRadius: "18px",
+    boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+    padding: "24px 32px",
+    marginTop: "32px",
+    maxWidth: "500px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    fontFamily: "'Comic Sans MS', 'Comic Sans', cursive",
+    color: "#222",
+  };
+  const keysTitleStyle = {
+    fontSize: "1.3rem",
+    fontWeight: "bold",
+    marginBottom: "12px",
+    color: "#00796b",
+    letterSpacing: "1px",
+  };
+  const keysListStyle = {
+    paddingLeft: "24px",
+  };
+  const keysItemStyle = {
+    fontSize: "1.1rem",
+    marginBottom: "8px",
+    background: "#fff",
+    borderRadius: "8px",
+    padding: "8px 12px",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
+    transition: "background 0.2s",
   };
 
   const backButtonStyle = {
@@ -180,11 +210,26 @@ export default function PianoInstrument() {
               keyboardConfig: KeyboardShortcuts.HOME_ROW,
             })}
             ref={pianoRef}
+            renderNoteLabel={({ midiNumber }) => {
+              const note = MidiNumbers.getAttributes(midiNumber).note;
+              return <div style={{ fontWeight: "bold" }}>{note[0]}</div>;
+            }}
           />
         </div>
-        <div>
+        <div className="keys" style={keysBoxStyle}>
           <p>try out these</p>
-          <li>C C D C F C C F </li>
+          <ol style={keysListStyle}>
+            <li style={keysItemStyle}>
+              C C D C F E C C D C G C F C C C A F E D B B A F G F{" "}
+            </li>
+            <li style={keysItemStyle}>
+              G G G D D D E E E D D C C B B A A G G D D C C{" "}
+            </li>
+            <li style={keysItemStyle}>C G B A F C F C C G B A F C F C</li>
+            <li style={keysItemStyle}>
+              G G A G C B B B G G A G D C C C G G G E C B A A A{" "}
+            </li>
+          </ol>
         </div>
       </div>
     </ErrorBoundary>
