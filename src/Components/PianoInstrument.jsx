@@ -6,6 +6,7 @@ import "react-piano/dist/styles.css";
 import { GiGrandPiano } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
+import "./PaintingApp.css";
 
 export default function PianoInstrument() {
   const [audioContext, setAudioContext] = useState(null);

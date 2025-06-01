@@ -283,7 +283,7 @@ export default function StoryTeller() {
           Next ➡
         </button>
       </div>
-      <button>add your own story</button>
+      <p>saving your own stories coming soon!</p>
     </div>
   );
 }

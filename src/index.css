@@ -15,11 +15,12 @@
 }
 
 body {
-  background-image: url("./assets/pic5.jpg");
+  background-image: url("./assets/image.jpg");
   background-size: cover;
   background-position: center;
   color: var(--text-color);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 a {
@@ -48,19 +49,13 @@ button:hover {
 */ .home {
   text-align: "center";
   padding: "2rem";
-  background-image: url("./assets/pic2.jpg");
+  background-image: url("./assets/image.jpg");
   background-size: cover;
   min-height: "80vh";
   border-radius: auto;
   margin: "1rem";
   box-shadow: "0 10px 20px rgba(0,0,0,0.2)";
 }
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 button {
   background-color: #003399;
   border: none;
@@ -73,50 +68,10 @@ button {
   }
   .navigation-controls {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.7rem;
   }
 }
 
-.painting-app {
-  background-image: url("../assets/piano.jpg");
-  background-size: cover;
-  background-position: center;
-  border: 3px dotted #00acc1;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 172, 193, 0.2);
-}
-
-.painting-app canvas {
-  display: block;
-  margin: 1rem auto;
-  border: 3px solid #26c6da;
-  border-radius: 1rem;
-  background-color: white;
-}
-.painting-app h2 {
-  text-align: center;
-}
-
-.painting-tools {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.painting-tools button {
-  background-color: #00ccff;
-  color: #004d40;
-  border: none;
-  margin: 0.3rem;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.painting-tools button:hover {
-  background-color: #3333ff;
-}
 .instrument-container {
   display: flex;
   flex-direction: column;
@@ -163,15 +118,18 @@ button {
   .instrument-container {
     padding: 10px;
   }
-
+  body {
+    font-size: 0.8rem;
+  }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .controls {
     flex-direction: column;
     align-items: center;
   }
+  
 
   select,
   label,
@@ -188,11 +146,13 @@ button {
     width: 100% !important;
     height: 150px !important;
   }
-}
+
+
 
 @media (max-width: 1024px) {
   .react-piano {
     width: 80% !important;
     height: 200px !important;
   }
+}
 }

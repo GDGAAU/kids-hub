@@ -16,6 +16,8 @@
     "@tonaljs/midi": "^4.10.1",
     "@tonaljs/note": "^4.12.0",
     "@tonejs/ui": "^0.1.5",
+    "bcryptjs": "^3.0.2",
+    "git": "^0.1.5",
     "konva": "^9.3.20",
     "react": "^18.3.1",
     "react-audio-player": "^0.17.0",

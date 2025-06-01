@@ -3,6 +3,7 @@ import { Stage, Layer, Line } from "react-konva";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import pic3 from "../assets/pic3.jpg";
+import "./PaintingApp.css";
 
 export default function PaintingApp() {
   const stageRef = useRef(null);
@@ -118,7 +119,7 @@ export default function PaintingApp() {
 
   return (
     <ErrorBoundary>
-      <div style={containerStyle}>
+      <div className="painting-app-container" style={containerStyle}>
         <Link to="/" style={{ position: "absolute", top: 50, left: 10 }}>
           <button
             style={{
